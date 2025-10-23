@@ -6,7 +6,7 @@ import {
   initGoogleFit,
   signInToGoogle,
   getStepsToday,
-} from "../services/googleFit";
+} from "../services/googlefit";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
