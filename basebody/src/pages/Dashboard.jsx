@@ -48,6 +48,7 @@ const Dashboard = () => {
       setIsGoogleConnected(true);
       setMessage("Google Fit connected!");
     } catch (err) {
+      console.log(err);
       setMessage("Failed to connect Google Fit");
     }
   };
