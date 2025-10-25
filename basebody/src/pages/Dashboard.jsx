@@ -130,6 +130,7 @@ const Dashboard = () => {
       fetchRewards();
       fetchSteps(); // Refresh steps in case they're deducted
     } catch (err) {
+      console.log(err);
       setMessage(err.response?.data?.error || "Failed to claim reward");
     } finally {
       setLoading(false);
