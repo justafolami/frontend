@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { stepsAPI, rewardsAPI } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import {Wallet, Mail, CoinsIcon} from 'lucide-react'
 import {
   initGoogleFit,
   signInToGoogle,
@@ -174,20 +175,22 @@ const Dashboard = () => {
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-bold mb-4 text-gray-800">User Info</h2>
             <div className="space-y-2">
-              <p className="text-gray-700">
-                <strong>Email:</strong> {user?.email}
+              <p className="text-gray-700 flex items-center gap-2 justify-start">
+                <Mail size={20} />{user?.email}
               </p>
-              <p className="text-gray-700">
-                <strong>Wallet:</strong>
+              <p className="text-gray-700 flex items-center gap-2 justify-start">
+                <Wallet size={20} />
                 <span className="text-xs block mt-1 break-all">
                   {user?.walletAddress}
                 </span>
               </p>
-              <p className="text-gray-700">
-                <strong>Total Steps:</strong> {totalSteps.toLocaleString()}
+              <p>Total Steps</p>
+              <p className="text-gray-700 flex items-center gap-2 justify-start">
+                <CoinsIcon size={20} /> {totalSteps.toLocaleString()}
               </p>
-              <p className="text-gray-700">
-                <strong>Today's Steps:</strong> {todaySteps.toLocaleString()}
+              <p>Todya's Steps</p>
+              <p className="text-gray-700 flex items-center gap-2 justify-start">
+                <CoinsIcon size={20} />  {todaySteps.toLocaleString()}
               </p>
             </div>
           </div>
